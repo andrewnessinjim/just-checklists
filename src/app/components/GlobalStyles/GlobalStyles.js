@@ -6,6 +6,10 @@ const GlobalStyles = createGlobalStyle`
   :root {
     height: 100%;
 
+    --color-primary: hsl(50deg 100% 55%);
+    --color-primary-light: hsl(50deg 100% 95%);
+    --color-primary-dark: hsl(50deg 100% 2%);
+
     --color-grey-100: hsl(0deg 0% 90%);
     --color-grey-300: hsl(0deg 0% 70%);
     --color-grey-700: hsl(0deg 0% 30%);
@@ -13,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     --color-grey-900: hsl(0deg 0% 10%);
 
     --color-black: hsl(0deg 0% 0%);
-    --color-white: hsl(0deg 0% 100%);
+    --color-white: hsl(50deg 0% 10%);
 
     --border-radius-size-big: 12px;
     --border-radius-size-small: 6px;
@@ -23,9 +27,10 @@ const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    background-color: var(--color-grey-900);
-    color: var(--color-grey-100);
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-light);
     height: 100%;
+    font-size: 110%;
   }
 
   /*

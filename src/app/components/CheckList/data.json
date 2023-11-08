@@ -1,0 +1,23 @@
+[
+    {
+        "id": "checklist-1",
+        "name": "React Component Design",
+        "items": [
+            {
+                "id": "item-1",
+                "value": "Is the component API designed by wearing the consumer hat and removing the producer hat?",
+                "isDone": false
+            },
+            {
+                "id": "item-2",
+                "value": "Are the component APIs consistent?",
+                "isDone": true
+            },
+            {
+                "id": "item-3",
+                "value": "When delegating props, is the choice to make the producer component's properties mandatory or overwritable considered?",
+                "isDone": false
+            }
+        ]
+    }
+]
