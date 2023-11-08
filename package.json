@@ -10,9 +10,11 @@
     "new-component": "new-component"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-feather": "^2.0.10",
     "styled-components": "^6.1.0"
   },
   "devDependencies": {

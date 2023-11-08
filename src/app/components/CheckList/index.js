@@ -1,2 +1,2 @@
-export * from './CheckList';
-export { default } from './CheckList';
+export * from './Checklist';
+export { default } from './Checklist';

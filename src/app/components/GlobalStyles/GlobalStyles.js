@@ -5,12 +5,26 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   :root {
     height: 100%;
+
+    --color-grey-100: hsl(0deg 0% 90%);
+    --color-grey-300: hsl(0deg 0% 70%);
+    --color-grey-700: hsl(0deg 0% 30%);
+    --color-grey-800: hsl(0deg 0% 20%);
+    --color-grey-900: hsl(0deg 0% 10%);
+
+    --color-black: hsl(0deg 0% 0%);
+    --color-white: hsl(0deg 0% 100%);
+
+    --border-radius-size-big: 12px;
+    --border-radius-size-small: 6px;
+    font-family: "Segoe UI",Helvetica,Arial,sans-serif;
   }
+
   body {
     padding: 0;
     margin: 0;
-    background-color: hsl(0deg 0% 10%);
-    color: hsl(0deg 0% 90%);
+    background-color: var(--color-grey-900);
+    color: var(--color-grey-100);
     height: 100%;
   }
 
