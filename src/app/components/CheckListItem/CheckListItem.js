@@ -12,10 +12,14 @@ const StListItem =  styled.li`
 const StValue = styled.p`
   flex: 1;
 `;
-function CheckListItem({id, value, isDone, onIsDoneChange}) {
+function CheckListItem({id, value, isComplete, onCompletionChange}) {
   return (
     <StListItem>
-      <StCheckbox isChecked={isDone} onCheckedChange={(data) => onIsDoneChange(id, data)}/>
+      <StCheckbox
+        isChecked={isComplete}
+        onCheckedChange={
+          (data) => onCompletionChange(id, data)
+        }/>
       <StValue>{value}</StValue>
     </StListItem>
   );

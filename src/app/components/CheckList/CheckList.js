@@ -34,24 +34,24 @@ function CheckList() {
     return <ZeroChecklists/>;
   }
 
-  function onIsDoneChange(id, isDone) {
+  function onCompletionChange(id, isComplete) {
     const nextChecklist = {...checklist};
-    checklist.items.find(item => item.id === id).isDone = isDone;
+    checklist.items.find(item => item.id === id).isComplete = isComplete;
 
     setChecklist(nextChecklist);
   }
-
+  
   return (
     <StWrapper>
       <StTitle>{TEST_CHECKLIST_DATA.name}</StTitle>
       <StList>
-        {checklist.items.map(({id, value, isDone}) => (
+        {checklist.items.map(({id, value, isComplete}) => (
           <CheckListItem
             key={id}
             id={id}
             value={value}
-            isDone={isDone}
-            onIsDoneChange={onIsDoneChange}/>
+            isComplete={isComplete}
+            onCompletionChange={onCompletionChange}/>
         ))}
       </StList>
     </StWrapper>
