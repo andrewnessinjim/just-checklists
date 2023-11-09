@@ -10,7 +10,7 @@ const StCheckboxRoot = styled(Checkbox.Root)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--color-primary-light);
+  background: ${p => p.checked? "var(--color-primary)" : "var(--color-primary-light)"};
   border: none;
   border-radius: var(--border-radius-size-small);
 `;
