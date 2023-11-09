@@ -28,9 +28,6 @@ const StList = styled.ul`
   
 `;
 
-const StListItem =  styled.li`
-`;
-
 function CheckList() {
   const [checklist, setChecklist] = React.useState(TEST_CHECKLIST_DATA);
 
