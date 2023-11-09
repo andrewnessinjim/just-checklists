@@ -30,7 +30,7 @@ const StPlusCircle = styled(PlusCircle)`
 `;
 
 const DropdownMenuContent = styled(DropdownMenu.Content)`
-    --dropdown-bg-color:var(--color-white);
+    --dropdown-bg-color:var(--color-primary-light);
     padding: 6px;
     
     background-color: var(--dropdown-bg-color);
@@ -39,21 +39,20 @@ const DropdownMenuContent = styled(DropdownMenu.Content)`
 `;
 
 const DropdownMenuArrow = styled(DropdownMenu.Arrow)`
-    fill: var(--color-white);
+    fill: var(--dropdown-bg-color);
 `;
 
 const DropdownMenuItem = styled(DropdownMenu.Item)`
     padding: 8px;
     cursor: pointer;
     margin-bottom: 4px;
-    color: black;
-    background-color: var(--color-white);
-    color: black;
+    color: var(--color-primary-dark);
+    background-color: var(--color-primary-light);
     border-radius: var(--border-radius-size-small);
     
     &:hover, &:focus {
-        background-color: var(--color-grey-900);
-        color: var(--color-white);
+        background-color: var(--color-primary-dark);
+        color: var(--color-primary-light);
     }
 
     &:last-child {
