@@ -2,8 +2,7 @@ import React from 'react';
 import ZeroChecklists from './ZeroChecklists';
 import checklistData from "./data.json";
 import styled from 'styled-components';
-import StCheckbox from '../StCheckbox';
-import CheckListItem from '../ChecklistItem/ChecklistItem';
+import CheckListItem from '../ChecklistItem';
 
 const TEST_CHECKLIST_DATA = checklistData[0];
 
