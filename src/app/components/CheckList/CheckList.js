@@ -27,25 +27,26 @@ const StList = styled.ul`
   
 `;
 
-function CheckList() {
-  const [checklist, setChecklist] = React.useState(TEST_CHECKLIST_DATA);
+function Checklist() {
+  const [name, setName] = React.useState(TEST_CHECKLIST_DATA.name);
+  const [items, setChecklist] = React.useState(TEST_CHECKLIST_DATA.items);
 
-  if (checklist.items.length === 0) {
+  if (items.length === 0) {
     return <ZeroChecklists/>;
   }
 
-  function onCompletionChange(id, isComplete) {
-    const nextChecklist = {...checklist};
-    checklist.items.find(item => item.id === id).isComplete = isComplete;
+  function onCompletionChange(itemId, isComplete) {
+    const nextItems = [...items];
+    nextItems.find(item => item.id === itemId).isComplete = isComplete;
 
-    setChecklist(nextChecklist);
+    setChecklist(nextItems);
   }
   
   return (
     <StWrapper>
-      <StTitle>{TEST_CHECKLIST_DATA.name}</StTitle>
+      <StTitle>{name}</StTitle>
       <StList>
-        {checklist.items.map(({id, value, isComplete}) => (
+        {items.map(({id, value, isComplete}) => (
           <CheckListItem
             key={id}
             id={id}
@@ -59,4 +60,4 @@ function CheckList() {
 }
 
 
-export default CheckList;
+export default Checklist;

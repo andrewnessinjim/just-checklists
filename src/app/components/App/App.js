@@ -2,7 +2,7 @@ import React from 'react';
 
 import GlobalStyles from '../GlobalStyles';
 import styled from 'styled-components';
-import CheckList from '../Checklist';
+import Checklist from '../Checklist';
 
 const SiteWrapper = styled.section`
   height: 100%;
@@ -14,7 +14,7 @@ function App() {
   return(
     <SiteWrapper>
       <GlobalStyles/>
-      <CheckList/>
+      <Checklist/>
     </SiteWrapper>
   )
 }
