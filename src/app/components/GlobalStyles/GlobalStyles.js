@@ -10,14 +10,11 @@ const GlobalStyles = createGlobalStyle`
     --color-primary-light: hsl(50deg 100% 95%);
     --color-primary-dark: hsl(50deg 100% 2%);
 
-    --color-grey-100: hsl(0deg 0% 90%);
-    --color-grey-300: hsl(0deg 0% 70%);
-    --color-grey-700: hsl(0deg 0% 30%);
-    --color-grey-800: hsl(0deg 0% 20%);
-    --color-grey-900: hsl(0deg 0% 10%);
-
-    --color-black: hsl(0deg 0% 0%);
-    --color-white: hsl(50deg 0% 10%);
+    --color-grey-100: hsl(50deg 0% 90%);
+    --color-grey-300: hsl(50deg 0% 70%);
+    --color-grey-700: hsl(50deg 0% 30%);
+    --color-grey-800: hsl(50deg 0% 20%);
+    --color-grey-900: hsl(50deg 0% 10%);
 
     --border-radius-size-big: 12px;
     --border-radius-size-small: 6px;
