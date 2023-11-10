@@ -3,6 +3,7 @@ import ZeroChecklists from './ZeroChecklists';
 import checklistData from "./data.json";
 import styled from 'styled-components';
 import CheckListItem from '../ChecklistItem';
+import Toolbar from '../Toolbar';
 
 const TEST_CHECKLIST_DATA = checklistData[0];
 
@@ -45,6 +46,7 @@ function Checklist() {
   return (
     <StWrapper>
       <StTitle>{name}</StTitle>
+      <Toolbar/>
       <StList>
         {items.map(({id, value, isComplete}) => (
           <CheckListItem
