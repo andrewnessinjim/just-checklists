@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import StDropdownMenu from "../DropdownMenu/StDropdownMenu";
+import Spacer from "../Spacer";
 
 const NEW_EMPTY_LIST_OPTION = 1;
 const NEW_TEMPLATE_LIST_OPTION = 2;
@@ -32,6 +33,7 @@ function ZeroChecklists() {
     return (
         <StWrapper>
             <StNoListsMsg>You do not have any checklists</StNoListsMsg>
+            <Spacer size="24px"/>
             <StDropdownMenu
                 options={MENU_OPTIONS}
                 onMenuOptionSelect={onMenuOptionSelect}

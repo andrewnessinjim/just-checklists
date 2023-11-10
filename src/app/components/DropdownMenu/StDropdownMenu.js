@@ -3,6 +3,7 @@ import styled from "styled-components";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 import { PlusCircle } from "react-feather";
+import Spacer from '../Spacer';
 
 const DropdownMenuTrigger = styled(DropdownMenu.Trigger)`
     /* border: none; */
@@ -13,7 +14,7 @@ const DropdownMenuTrigger = styled(DropdownMenu.Trigger)`
     cursor: pointer;
     display: inline-block;
     border-radius: var(--border-radius-size-big);
-    margin: 24px;
+
     &:hover {
         transform: scale(1.05);
     }
@@ -45,7 +46,6 @@ const DropdownMenuArrow = styled(DropdownMenu.Arrow)`
 const DropdownMenuItem = styled(DropdownMenu.Item)`
     padding: 8px;
     cursor: pointer;
-    margin-bottom: 4px;
     color: var(--color-primary-dark);
     background-color: var(--color-primary-light);
     border-radius: var(--border-radius-size-small);
@@ -54,10 +54,6 @@ const DropdownMenuItem = styled(DropdownMenu.Item)`
         background-color: var(--color-primary-dark);
         color: var(--color-primary-light);
     }
-
-    &:last-child {
-        margin-bottom: initial;
-    };
 `;
 function StDropdownMenu({ options, onMenuOptionSelect }) {
     console.log(options)
@@ -72,13 +68,19 @@ function StDropdownMenu({ options, onMenuOptionSelect }) {
             <DropdownMenu.Portal>
                 <DropdownMenuContent>
                     <DropdownMenuArrow width={20} height={10} />
-                    {options.map(({ id, label }) => (
-                        <DropdownMenuItem
-                            key={id}
-                            onSelect={() => onMenuOptionSelect(id)}>
-                            {label}
-                        </DropdownMenuItem>
-                    ))}
+                    {options.map(({ id, label }, index) => {
+                        const isLastItem = index === options.length -1;
+                        return (
+                            <>
+                                <DropdownMenuItem
+                                    key={id}
+                                    onSelect={() => onMenuOptionSelect(id)}>
+                                    {label}
+                                </DropdownMenuItem>
+                                {!isLastItem && <Spacer size="4px"/>}
+                            </>
+                        )
+                    })}
                 </DropdownMenuContent>
             </DropdownMenu.Portal>
         </DropdownMenu.Root>

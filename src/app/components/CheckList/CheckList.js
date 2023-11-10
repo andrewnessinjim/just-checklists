@@ -4,6 +4,7 @@ import checklistData from "./data.json";
 import styled from 'styled-components';
 import CheckListItem from '../ChecklistItem';
 import Toolbar from '../Toolbar';
+import Spacer from '../Spacer';
 
 const TEST_CHECKLIST_DATA = checklistData[0];
 
@@ -11,7 +12,6 @@ const StTitle = styled.h2`
   text-align: center;
   color: var(--color-primary);
   font-weight: 400;
-  margin-bottom: 1em;
 `;
 
 const StWrapper = styled.section`
@@ -45,7 +45,10 @@ function Checklist() {
   
   return (
     <StWrapper>
-      <StTitle>{name}</StTitle>
+      <StTitle>
+        {name}
+        <Spacer size="1em"/>
+      </StTitle>
       <Toolbar/>
       <StList>
         {items.map(({id, value, isComplete}) => (
