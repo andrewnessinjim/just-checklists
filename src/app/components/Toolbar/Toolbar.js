@@ -16,11 +16,11 @@ const StButton = styled.button`
   transition: 250ms transform;
 
   &:hover, &:focus {
-    transform: scale(1.05)
+    transform: scale(1.1)
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
 `;
 
