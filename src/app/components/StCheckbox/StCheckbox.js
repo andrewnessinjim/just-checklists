@@ -23,9 +23,10 @@ const StCheckIcon = styled(Check)`
   stroke: var(--color-primary-dark);
 `;
 
-function StCheckbox({isChecked, onCheckedChange}) {
+function StCheckbox({isChecked, onCheckedChange, ...delegated}) {
   return (
     <StCheckboxRoot
+      {...delegated}
       height={24}
       weight={24}
       checked={isChecked}

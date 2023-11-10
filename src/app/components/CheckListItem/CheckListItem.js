@@ -13,14 +13,19 @@ const StValue = styled.p`
   flex: 1;
 `;
 function CheckListItem({id, value, isComplete, onCompletionChange}) {
+  const checkboxId = `is-complete-checkbox${React.useId()}`;
+
   return (
     <StListItem>
       <StCheckbox
+        id={checkboxId}
         isChecked={isComplete}
         onCheckedChange={
           (data) => onCompletionChange(id, data)
         }/>
-      <StValue>{value}</StValue>
+      <StValue>
+        <label htmlFor={checkboxId}>{value}</label>
+      </StValue>
     </StListItem>
   );
 }
