@@ -56,7 +56,6 @@ const DropdownMenuItem = styled(DropdownMenu.Item)`
     }
 `;
 function StDropdownMenu({ options, onMenuOptionSelect }) {
-    console.log(options)
     return (
         <DropdownMenu.Root>
             <DropdownMenuTrigger>
@@ -71,14 +70,14 @@ function StDropdownMenu({ options, onMenuOptionSelect }) {
                     {options.map(({ id, label }, index) => {
                         const isLastItem = index === options.length -1;
                         return (
-                            <>
+                            <div key={id}>
                                 <DropdownMenuItem
                                     key={id}
                                     onSelect={() => onMenuOptionSelect(id)}>
                                     {label}
                                 </DropdownMenuItem>
                                 {!isLastItem && <Spacer size="4px"/>}
-                            </>
+                            </div>
                         )
                     })}
                 </DropdownMenuContent>

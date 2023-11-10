@@ -3,7 +3,6 @@ import ZeroChecklists from './ZeroChecklists';
 import checklistData from "./data.json";
 import styled from 'styled-components';
 import CheckListItem from '../ChecklistItem';
-import Toolbar from '../Toolbar';
 import Spacer from '../Spacer';
 
 const TEST_CHECKLIST_DATA = checklistData[0];
@@ -15,7 +14,7 @@ const StTitle = styled.h2`
 `;
 
 const StWrapper = styled.section`
-  max-width: 32rem;
+  max-width: 40rem;
 `;
 
 const StList = styled.ul`
@@ -30,7 +29,7 @@ const StList = styled.ul`
 
 function Checklist() {
   const [name, setName] = React.useState(TEST_CHECKLIST_DATA.name);
-  const [items, setChecklist] = React.useState(TEST_CHECKLIST_DATA.items);
+  const [items, setItems] = React.useState(TEST_CHECKLIST_DATA.items);
 
   if (items.length === 0) {
     return <ZeroChecklists/>;
@@ -40,7 +39,15 @@ function Checklist() {
     const nextItems = [...items];
     nextItems.find(item => item.id === itemId).isComplete = isComplete;
 
-    setChecklist(nextItems);
+    setItems(nextItems);
+  }
+
+  function onDelete(itemId) {
+    const nextItems = [...items];
+    const deleteIndex = nextItems.findIndex(item => item.id === itemId);
+
+    nextItems.splice(deleteIndex, 1);
+    setItems(nextItems);
   }
   
   return (
@@ -49,7 +56,6 @@ function Checklist() {
         {name}
         <Spacer size="1em"/>
       </StTitle>
-      <Toolbar/>
       <StList>
         {items.map(({id, value, isComplete}) => (
           <CheckListItem
@@ -57,7 +63,8 @@ function Checklist() {
             id={id}
             value={value}
             isComplete={isComplete}
-            onCompletionChange={onCompletionChange}/>
+            onCompletionChange={onCompletionChange}
+            onDelete={onDelete}/>
         ))}
       </StList>
     </StWrapper>
